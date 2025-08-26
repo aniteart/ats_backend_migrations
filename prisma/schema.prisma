@@ -1,12 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -14,11 +7,41 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Vagas {
-  id          Int      @id @default(autoincrement())
-  titulo      String
-  descricao   String
-  localizacao String
-  tipo        String
-  dataCriacao DateTime @default(now())
+model Vaga {
+  id                 Int              @id @default(autoincrement())
+  title              String
+  description        String
+  company            String
+  location           String
+  salary             Float?
+  status             Status           @default(OPEN)
+  workMode           workMode
+  contractType       contractType
+  seniorityLevel     seniorityLevel
+  requirements       String
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+}
+
+enum Status {
+  OPEN
+  CLOSED
+}
+
+enum workMode{
+  REMOTE
+  HYBRID
+  ONSITE
+}
+
+enum contractType {
+  CLT
+  CONTRACTOR
+  FREELANCER
+}
+
+enum seniorityLevel {
+  JUNIOR
+  MID
+  SENIOR
 }
