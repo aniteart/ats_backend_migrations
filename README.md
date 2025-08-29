@@ -3,8 +3,8 @@ Desafio de CRUD  de Vagas para TOTVS
 Ambiente DEV escolhido:
 
 Node.js <versão: v22.18.0>
-Prisma <ORM>
-Express <REST>
+Prisma <versão: 6.14.0>
+& Express <REST>
 Postgres <DB> <versão 17.6>
 
 Para organização:
