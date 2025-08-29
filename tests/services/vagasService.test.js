@@ -64,3 +64,6 @@ test('deleteVaga delega para prisma.vaga.delete', async () => {
   await service.deleteVaga(3);
   expect(vagaMock.delete).toHaveBeenCalledWith({ where: { id: 3 } });
 });
+
+// Service (vagasService): 
+// Garantir que a camada de negócio chama o Prisma corretamente (método certo, parâmetros certos) e implementa paginação/CRUD.

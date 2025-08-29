@@ -127,3 +127,6 @@ test('DELETE /vagas/:id retorna 204', async () => {
   expect(res.status).toBe(204);
   expect(res.text).toBe('');
 });
+
+// Controller (rotas Express): 
+// Garantir o contrato HTTP (status codes, body de resposta, parse do salário em formato BR, erros traduzidos p/ 404, etc.).
